@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create,Update And Delete</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="priya.css">
+	<script src="priya.js"></script>
+        
+</head>
+<body>
+	<style type="text/css">
+		form{
+			
+		}
+	</style>
+<form>
+	<div class="field">
+		<label>Your Name</label><br>
+		<input type="text" name="yourname"><br>
+		<label>college Name</label><br>
+		<input type="text" name="collegename"><br>
+		<label>Year of Study</label><br>
+		<input type="text" name="yearofstudy"><br>
+		<label>city</label><br>
+		<input type="text" name="city"><br><br>
+		<input type="submit" name=""><br>
+	</div>
+	      <br><div class="tab tab-2">
+                <button onclick="addHtmlTableRow();">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+            </div>
+</form>
+<table class="list">
+	<thead>
+		<tr>
+		<th>Name</th>
+		<tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>priya</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

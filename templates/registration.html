@@ -1,0 +1,93 @@
+
+{% load static %}
+ {% block content %}
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href=" /static/assets/css/util.css">
+  <link rel="stylesheet" type="text/css" href=" /static/assets/css/main.css">
+</head>
+
+<body>
+<style type="text/css">
+  label{
+color: gray; 
+position: absolute;
+margin-left: 70px; 
+margin-top: 15px; 
+font-size: 14px;
+
+  }
+h1{
+  text-align: center;
+  font-size: 30px;
+}
+input{
+  position: absolute;
+  margin-left: 230px;
+  border: transparent;
+  padding: 15px 20px;
+  border-radius: 25px;
+ font-size: 14px;
+}
+.submit{
+border: none;
+padding: 15px 20px;
+border-radius: 25px;
+background:#1161ee; 
+color: white;
+position: absolute;
+width: 25%;
+margin-left: 37%;
+}
+p{
+  text-align: center;
+   font-size: 17px;
+   color:black;
+}
+a{
+   font-size: 15px;
+   color:black;
+}
+</style>
+
+<form action="registration" method="POST">
+  <div style="text-align: center; background-color: green;">
+  {% for message in messages %}
+   <h3>{{message}}</h3>
+   {% endfor %}
+    
+        </div>
+  {% csrf_token %}
+ 
+<div class ="container-fluid p-0" >
+<div class="jumbotron" style="">
+<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form-title" style=" height: 150px; background-image: url('{% static "assets/img/121.jpg"%}') "; ">
+        
+          <span class="login100-form-title-1">
+        <h1  style="text-align: center;font-size: 30px;">Register Here</h1>
+          </span>
+        </div>
+<label for="username">FirstName :</label>    
+<input type="text" name="first_name" placeholder="Enter Your  First Name"><br><br>
+<label for="username">LastName :</label> 
+<input type="text" name="last_name" placeholder="Enter Your Last Name"><br><br>
+  <label for="username">Username :</label> 
+  <input type="text" name="username" placeholder="Enter Your Username"><br><br>
+  <label for="username">Email :</label> 
+  <input type="email" name="email" placeholder="Enter Your Email "><br><br>
+  <label for="username">Password:</label> 
+  <input type="password" name="password1" placeholder="Enter Your Password"><br><br>
+  <label for="username">Confirm Password:</label> 
+  <input type="password" name="password2" placeholder="Confirm Password"><br><br><br>
+  <input type="submit" name="submit" class="submit"><br><br><br>
+  <p>If Already Register?<a href="login">Login</a></p>
+</form>
+<br><br>
+  
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,100 @@
+
+{% block body_block %}
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href=" /static/assets/css/util.css">
+  <link rel="stylesheet" type="text/css" href=" /static/assets/css/main.css">
+</head>
+<body>
+<style type="text/css">
+  label{
+color: gray; 
+position: absolute;
+margin-left: 70px; 
+margin-top: 15px; 
+font-size: 14px;
+
+  }
+h1{
+  text-align: center;
+  font-size: 30px;
+}
+input{
+  position: absolute;
+  margin-left: 230px;
+  border: transparent;
+  padding: 15px 20px;
+  border-radius: 25px;
+ font-size: 14px;
+}
+.submit{
+
+border: none;
+padding: 15px 20px;
+border-radius: 25px;
+background:#1161ee; 
+color: white;
+position: absolute;
+width: 25%;
+margin-left: 37%;
+}
+p{
+  text-align: center;
+   font-size: 17px;
+   color:black;
+}
+a{
+   font-size: 15px;
+   color:black;
+}
+</style>
+
+
+
+<div style="text-align: center; background-color: green;">
+  {% for message in messages %}
+   <h3>{{message}}</h3>
+   {% endfor %}
+    
+        </div>
+
+<div class="container-login100">
+<div class="wrap-login100">
+<div class="login100-form-title"  style="  height: 150px;background-image: url('{% static "assets/img/121.jpg"%}') ";">
+     <span class="login100-form-title-1">
+        
+<h1>LOGIN</h1>
+        
+        </span>
+
+</div>
+    <form method="Post" action="login">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+         
+
+               <br><br>
+        
+  <label for="username">Username :</label>
+  <input  type="text" name="username" placeholder=" Enter Your Username">
+         <br><br><br>
+  <label for="password">Password :</label>
+  <input  type="password" name="password" placeholder=" Enter Your Password">
+  <br><br><br><br> <input type="submit" name="" value="Login" class="submit">
+       
+       <br><br><br><br><br><br><br><br><br><br><br><br>
+
+  
+</form>
+</div>
+
+ <br><br><br><br>
+
+</div>
+</div>
+
+
+{% endblock %}

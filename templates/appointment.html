@@ -1,0 +1,117 @@
+
+{% block body_block %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>appointment</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style1.css" rel="stylesheet">
+
+</head>
+
+
+<section id="appointment" class="appointment section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <form action="appointment" method="POST" role="form" class="php-email-form">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-4 form-group">
+              <input type="date" name="date" class="form-control datepicker" id="myDate" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+
+
+            </div>
+            <div class="col-md-4 form-group">
+              
+
+              <select name="your_schedule" class="from-control">
+                <option value="First Choice Appointment Time">First Choice Appointment Time</option>
+              
+<option value="9 AM to 10 AM">9 AM to 10 AM</option>
+<option value="11 AM to 12 PM">11 AM to 12 PM</option>
+<option value="2 PM to 4 PM">2 PM to 4 PM</option>
+<option value="8 PM to 10 PM"> 8 PM to 10 PM</option>
+              </select>
+              
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group">
+             
+              <select name="your_time" class="from-control">
+                <option value="Choose Your Scheldule ">Choose Your Scheldule </option>
+<option value="9 AM to 10 AM">9 AM to 10 AM</option>
+<option value="11 AM to 12 PM">11 AM to 12 PM</option>
+<option value="2 PM to 4 PM">2 PM to 4 PM</option>
+<option value="8 PM to 10 PM"> 8 PM to 10 PM</option>
+              </select>
+              
+              <div class="validate"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Appointment Section -->
+
+
+
+
+
+
+
+{%endblock%}

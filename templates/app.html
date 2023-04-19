@@ -1,0 +1,76 @@
+<html>
+<head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
+<body>
+
+<h1 style="text-align: center;">Hello {{ user.username }}</h1><br>
+
+ <div style="text-align: center; background-color: green;">
+                  {% for message in messages %}
+                   <h3>{{message}}</h3>
+                   {% endfor %}
+    
+                   </div>
+
+<form action="app" method="POST">
+      {% csrf_token %}
+        <table class="table" style="">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">ClassID</th>
+              <th scope="col">Demo Mode</th>
+              <th scope="col">Available Demo</th>
+              <th scope="col">Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><input type="date" name="date" class="form-control datepicker" id="myDate"></th>
+              <td><input type="text" name="classid" class="form-control"  placeholder="classID"></td>
+              <td><input type="text" name="Mode_type" class="form-control"  placeholder="Mode of Demo"></td>
+              <td><input type="text" name="no_demo" class="form-control"  placeholder="Available Demo" ></td>
+              <td><button type="submit" style=" border: none;
+      padding: 15px 20px;
+       border-radius: 25px;
+     background:#1161ee; color: white;position: absolute;">Save</button></td>
+            </tr>
+          </tbody>
+       </table>
+
+   </form>  
+
+
+  <h1 style="text-align: center;">Created Demo </h1>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Demo Mode</th>
+      <th scope="col">Available Demo</th>
+      <th scope="col">ClassID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for each in x %}
+        <tr>
+        <th scope="row">{{ each.date }}</th>
+        <td>{{ each.Mode_type }}</td>
+        <td>{{ each.no_demo }}</</td>
+        <td>{{ each.classid }}</td>
+        </tr>
+        {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
+
+		
